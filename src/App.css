@@ -1,48 +1,93 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Mono',sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-.container
-{
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    z-index: 1;
+}
+
+.container h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructions {
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.swap-icon {
+    color: white;
+    font-size: 24px;
+    width: 24px;
+    text-align: center;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.swap-icon:hover {
+    transform: rotate(180deg);
+}
+
+.loading-container, .error-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
-    h1{
-        color: white;
-        font-size: 3rem;
-        margin-bottom: 40px;
-        text-align: center;
-    }
+    color: white;
 }
 
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #146aa3c7;
-    border-radius: 10px;
-    /* height: 400px; */
-    width: 400px;
-    padding: 40px;
-    margin: 0 auto;
+.loading-spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 5px solid #fff;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
 }
 
-.content ul {
-    width: 240px;
-    margin-bottom: 30px;
-    li{
-        margin-top: 15px;
-        color: white;
-        list-style: none;
-        text-align: justify;
-        /* text-align: start; */
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    color: #ff6b6b;
+    margin-bottom: 10px;
 }
