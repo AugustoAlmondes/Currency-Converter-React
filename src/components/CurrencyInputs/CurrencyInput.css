@@ -1,37 +1,44 @@
-.container-inputs{
-    width: 180px;
-    display: grid;
-    grid-template-columns: 100px 80px;
+.currency-input {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
 }
 
-input, select{
-    /* background: red; */
-    border: 0;
-    margin: 10px 0;
-    font-weight: bold;
-    /* color: white; */
+.currency-input:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
-input{
-    /* padding: 10px; */
-    height: 35px;
-    text-align: center;
-}
-
-select{
+.currency-input input {
+    flex: 1;
+    height: 50px;
+    padding: 0 15px;
     border: none;
-    border-radius:0 5px 5px 0;
-    height: 35px;
-    width: 80px;
+    background: transparent;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+.currency-input input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-input[type=number]{
-    -moz-appearance:textfield;
-    appearance:textfield;
+.currency-select {
+    height: 50px;
+    padding: 0 15px;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+.currency-select option {
+    background: #146aa3;
+    color: white;
 }
